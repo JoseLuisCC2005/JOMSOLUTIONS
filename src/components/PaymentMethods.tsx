@@ -9,15 +9,11 @@ const PaymentMethods = () => {
         <div className="flex flex-wrap justify-center items-center gap-8">
           <PaymentMethod icon={<FaCreditCard className="text-4xl" />} name="Credit Card" />
           <PaymentMethod icon={<FaPaypal className="text-4xl" />} name="PayPal" />
-          <PaymentMethod icon={<FaBitcoin className="text-4xl" />} name="Bitcoin" />
           <PaymentMethod
             icon={<Image src="/stripe-logo.png" alt="Stripe" width={64} height={64} />}
             name="Stripe"
           />
-          <PaymentMethod
-            icon={<Image src="/square-logo.png" alt="Square" width={64} height={64} />}
-            name="Square"
-          />
+
         </div>
       </div>
     </section>

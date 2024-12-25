@@ -64,9 +64,6 @@ const PackageCard = ({ title, price, features, highlighted = false }: { title: s
         </li>
       ))}
     </ul>
-    <button className="w-full bg-primary-light dark:bg-primary-dark hover:bg-secondary-light dark:hover:bg-secondary-dark text-text-light dark:text-text-dark font-bold py-2 px-4 rounded transition duration-300">
-      Choose Plan
-    </button>
   </div>
 )
 

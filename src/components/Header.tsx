@@ -1,3 +1,5 @@
+// Cambié el color del fondo a un morado oscuro sólido según tu solicitud.
+
 'use client'
 
 import { useState } from 'react'
@@ -8,11 +10,11 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-surface-light dark:bg-surface-dark shadow-md">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-blue-600 shadow-md">
       <nav className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-primary-light dark:text-primary-dark">
-            Your Name
+          <Link href="/" className="text-2xl font-bold text-white">
+            JOM SOLUTIONS
           </Link>
           <div className="hidden md:flex space-x-4">
             <NavLink href="#home">Home</NavLink>
@@ -33,7 +35,7 @@ const Header = () => {
             <SocialIcon href="https://instagram.com" icon={<FaInstagram />} />
           </div>
           <button
-            className="md:hidden text-text-light dark:text-text-dark"
+            className="md:hidden text-white"
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +65,7 @@ const Header = () => {
 const NavLink = ({ href, children, mobile = false }: { href: string; children: React.ReactNode; mobile?: boolean }) => (
   <Link
     href={href}
-    className={`text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark transition duration-300 ${
+    className={`text-white font-bold hover:underline transition duration-300 ${
       mobile ? 'block py-2' : ''
     }`}
   >
@@ -76,11 +78,10 @@ const SocialIcon = ({ href, icon }: { href: string; icon: React.ReactNode }) => 
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark transition duration-300"
+    className="text-white hover:underline transition duration-300"
   >
     {icon}
   </a>
 )
 
 export default Header
-

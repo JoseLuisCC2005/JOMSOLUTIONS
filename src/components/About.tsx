@@ -1,26 +1,33 @@
-console.log("HOlaaaaa");
 import Image from 'next/image'
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython } from 'react-icons/fa'
 import { SiNextdotjs } from 'react-icons/si'
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-surface-light dark:bg-surface-dark">
+    <section
+      id="about"
+      className="py-16"
+      style={{
+        backgroundColor: '#01030e', 
+      }}
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-primary-light dark:text-primary-dark">About Me</h2>
-        <div className="flex flex-col md:flex-row items-center">
+        <h2 className="text-4xl font-bold mb-4 text-left text-primary-light dark:text-primary-dark">About us</h2>
+        <div className="flex flex-col md:flex-row ">
           <div className="md:w-1/3 mb-8 md:mb-0">
-            <Image
-              src="/profile-photo.jpg"
-              alt="Your Name"
-              width={300}
-              height={300}
-              className="rounded-full mx-auto"
-            />
+            <div className="relative w-72 h-72 mx-auto rounded-full overflow-hidden">
+              <Image
+                src="/JOM LOGO .png"
+                alt="Your Name"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-full"
+              />
+            </div>
           </div>
           <div className="md:w-2/3 md:pl-12">
             <p className="text-lg mb-6 text-text-light dark:text-text-dark">
-              With over 5 years of experience in web development, I specialize in creating custom, responsive websites that meet the unique needs of each client. My expertise spans across various technologies, allowing me to deliver comprehensive solutions for businesses of all sizes.
+              With over 5 years of experience in web development, we specialize in creating custom, responsive websites that meet the unique needs of each client. Our expertise spans across various technologies, allowing us to deliver comprehensive solutions for businesses of all sizes.
             </p>
             <h3 className="text-2xl font-semibold mb-4 text-secondary-light dark:text-secondary-dark">Skills</h3>
             <div className="flex flex-wrap gap-4">
@@ -46,4 +53,3 @@ const Skill = ({ icon, name }: { icon: React.ReactNode; name: string }) => (
 )
 
 export default About
-

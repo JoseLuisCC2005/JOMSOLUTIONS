@@ -4,6 +4,7 @@ import { FaDesktop, FaFacebookF, FaSearch, FaChartBar, FaTools, FaWhatsapp } fro
 
 const Services = () => {
   return (
+    
     <section id="services" className="py-20 bg-background-light dark:bg-background-dark">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-primary-light dark:text-primary-dark">My Services</h2>
