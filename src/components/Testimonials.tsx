@@ -10,13 +10,13 @@ const Testimonials = () => {
   const testimonials = [
     {
       quote: "Working with this developer was a game-changer for our business. They delivered a website that exceeded our expectations and helped us increase our online presence.",
-      author: "John Doe",
-      company: "ABC Company",
-      image: "/client1.jpg"
+      author: "UNICOB CEO",
+      company: "UNICOB",
+      image: "/LOGO UNICOB.png"
     },
     {
       quote: "The attention to detail and the ability to understand our unique needs set this developer apart. Our new website has significantly improved our user engagement.",
-      author: "Jane Smith",
+      author: "PAULINA SALAS VALTIERRA",
       company: "XYZ Corp",
       image: "/client2.jpg"
     },
@@ -37,7 +37,7 @@ const Testimonials = () => {
   }
 
   return (
-    <section id="testimonials" className="py-20 bg-background-light dark:bg-background-dark">
+    <section id="testimonials" className="py-20" style={{ backgroundColor: '#01030e' }}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-primary-light dark:text-primary-dark">What Clients Say</h2>
         <div className="relative">
@@ -57,7 +57,8 @@ const Testimonials = () => {
         </div>
       </div>
     </section>
-  )
+  );
+  
 }
 
 const TestimonialCard = ({ quote, author, company, image }: { quote: string; author: string; company: string; image: string }) => (

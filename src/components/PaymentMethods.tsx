@@ -1,31 +1,46 @@
-import Image from 'next/image'
-import { FaCreditCard, FaPaypal, FaBitcoin } from 'react-icons/fa'
+import { FaCreditCard, FaPaypal, FaApplePay } from "react-icons/fa";
 
 const PaymentMethods = () => {
   return (
-    <section id="payment-methods" className="py-20 bg-white dark:bg-gray-900">
+    <section
+      id="payment-methods"
+      className="py-20"
+      style={{ backgroundColor: "#01030e" }}
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">Payment Methods</h2>
-        <div className="flex flex-wrap justify-center items-center gap-8">
-          <PaymentMethod icon={<FaCreditCard className="text-4xl" />} name="Credit Card" />
-          <PaymentMethod icon={<FaPaypal className="text-4xl" />} name="PayPal" />
-          <PaymentMethod
-            icon={<Image src="/stripe-logo.png" alt="Stripe" width={64} height={64} />}
-            name="Stripe"
-          />
-
+        <h2 className="text-4xl font-bold text-center mb-12 text-primary-light dark:text-primary-dark">
+          Payment Methods
+        </h2>
+        <div className="flex justify-center items-center gap-6 flex-wrap">
+          <PaymentMethod icon={<FaCreditCard />} name="Debit Card" />
+          <PaymentMethod icon={<FaPaypal />} name="PayPal" />
+          <PaymentMethod icon={<FaApplePay />} name="ApplePay" />
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-const PaymentMethod = ({ icon, name }: { icon: React.ReactNode; name: string }) => (
+const PaymentMethod = ({
+  icon,
+  name,
+}: {
+  icon: React.ReactNode;
+  name: string;
+}) => (
   <div className="flex flex-col items-center">
-    <div className="mb-2">{icon}</div>
-    <p className="text-lg font-semibold text-gray-800 dark:text-white">{name}</p>
+    <div
+      className="flex items-center justify-center w-20 h-20 rounded-full mb-2"
+      style={{ backgroundColor: "#34495e" }}
+    >
+      <div className="text-5xl text-primary-light dark:text-primary-dark">
+        {icon}
+      </div>
+    </div>
+    <p className="text-lg font-semibold text-primary-light dark:text-primary-dark">
+      {name}
+    </p>
   </div>
-)
+);
 
-export default PaymentMethods
-
+export default PaymentMethods;

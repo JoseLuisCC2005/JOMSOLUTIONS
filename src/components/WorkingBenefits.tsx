@@ -1,12 +1,14 @@
 "use client";
 
-import { FaClock, FaHandshake, FaLightbulb, FaRocket } from 'react-icons/fa'
+import { FaClock, FaHandshake, FaLightbulb, FaRocket } from 'react-icons/fa';
 
 const WorkingBenefits = () => {
   return (
-    <section id="working-benefits" className="py-20 bg-gray-100 dark:bg-gray-800">
+    <section id="working-benefits" className="py-20" style={{ backgroundColor: '#01030e' }}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">Benefits of Working With Us</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-primary-light dark:text-primary-dark">
+          Benefits of Working With Us
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <BenefitCard
             icon={<FaClock />}
@@ -31,16 +33,28 @@ const WorkingBenefits = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-const BenefitCard = ({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) => (
-  <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-    <div className="text-4xl mb-4 text-blue-500 dark:text-blue-400 flex justify-center">{icon}</div>
-    <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">{title}</h3>
-    <p className="text-gray-600 dark:text-gray-300">{description}</p>
+const BenefitCard = ({
+  icon,
+  title,
+  description,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}) => (
+  <div
+    className="rounded-lg shadow-md p-6 text-center"
+    style={{
+      backgroundColor: '#34495e', // Gris azulado
+    }}
+  >
+    <div className="text-4xl mb-4 text-primary-light dark:text-primary-dark flex justify-center">{icon}</div>
+    <h3 className="text-xl font-semibold mb-2 text-primary-light dark:text-primary-dark">{title}</h3>
+    <p className="text-text-secondary-light dark:text-text-secondary-dark">{description}</p>
   </div>
-)
+);
 
-export default WorkingBenefits
-
+export default WorkingBenefits;

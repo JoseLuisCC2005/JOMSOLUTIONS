@@ -4,8 +4,11 @@ import { FaDesktop, FaFacebookF, FaSearch, FaChartBar, FaTools, FaWhatsapp } fro
 
 const Services = () => {
   return (
-    
-    <section id="services" className="py-20 bg-background-light dark:bg-background-dark">
+    <section
+      id="services"
+      className="py-20"
+      style={{ backgroundColor: '#01030e' }}
+    >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-primary-light dark:text-primary-dark">My Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -46,11 +49,16 @@ const ServiceCard = ({ icon, title, description }: { icon: React.ReactNode; titl
     <h3 className="text-xl font-semibold mb-2 text-text-light dark:text-text-dark">{title}</h3>
     <p className="text-text-secondary-light dark:text-text-secondary-dark mb-4">{description}</p>
     <div className="flex items-center bg-primary-light dark:bg-primary-dark rounded-lg p-2">
-      <button className="text-text-light dark:text-text-dark font-bold flex-grow">
-        Request Info
-      </button>
       <a
-        href="https://wa.me/1234567890"
+        href="https://wa.me/3314757456"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-text-light dark:text-text-dark font-bold flex-grow text-center"
+      >
+        Request Info
+      </a>
+      <a
+        href="https://wa.me/3314757456"
         target="_blank"
         rel="noopener noreferrer"
         className="text-text-light dark:text-text-dark ml-2"
@@ -61,5 +69,4 @@ const ServiceCard = ({ icon, title, description }: { icon: React.ReactNode; titl
   </div>
 )
 
-export default Services
-
+export default Services;
