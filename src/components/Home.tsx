@@ -14,15 +14,15 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-We Grow When You Do.       
- </motion.h1>
+Tu éxito, nuestro crecimiento.
+</motion.h1>
         <motion.p 
           className="text-xl md:text-2xl mb-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-We bring your vision to life with cutting-edge web development.
+Transformamos tu visión en realidad con soluciones web innovadoras y avanzadas.
 </motion.p>
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -33,7 +33,7 @@ We bring your vision to life with cutting-edge web development.
             href="#services"
             className="bg-primary-light dark:bg-primary-dark hover:bg-secondary-light dark:hover:bg-secondary-dark text-text-light dark:text-text-dark font-bold py-3 px-6 rounded-full transition duration-300"
           >
-            Learn about my services
+            Saber mas sobre nuestros servicios
           </Link>
         </motion.div>
       </div>

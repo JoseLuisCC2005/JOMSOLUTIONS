@@ -1,6 +1,5 @@
 "use client";
 
-
 import Image from 'next/image'
 import { useState } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
@@ -9,22 +8,28 @@ const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const testimonials = [
     {
-      quote: "Working with this developer was a game-changer for our business. They delivered a website that exceeded our expectations and helped us increase our online presence.",
+      quote: "Trabajar con este equipo fue un cambio total para nuestro negocio. Entregaron un sitio web que superó nuestras expectativas y nos ayudaron a aumentar nuestra presencia en línea.",
       author: "UNICOB CEO",
       company: "UNICOB",
       image: "/LOGO UNICOB.png"
     },
     {
-      quote: "The attention to detail and the ability to understand our unique needs set this developer apart. Our new website has significantly improved our user engagement.",
-      author: "PAULINA SALAS VALTIERRA",
-      company: "XYZ Corp",
-      image: "/client2.jpg"
+      quote: "La atención al detalle y la capacidad de comprender nuestras necesidades únicas hicieron que este equipo se destacara. Nuestro nuevo sitio web ha mejorado significativamente el compromiso de nuestros usuarios.",
+      author: "Braulio Hernández",
+      company: "Nowya",
+      image: "/Logo nowya.png"
     },
     {
-      quote: "I was impressed by the developer's technical skills and creativity. They transformed our outdated website into a modern, user-friendly platform that our customers love.",
-      author: "Mike Johnson",
-      company: "123 Industries",
-      image: "/client3.jpg"
+      quote: "Me impresionaron las habilidades técnicas y la creatividad que mostraron. Transformaron nuestro sitio web anticuado en una plataforma moderna y fácil de usar que a nuestros clientes les encanta.",
+      author: "Juan Cornejo",
+      company: "Acquatix",
+      image: "/sinfondo.png"
+    },
+    {
+      quote: "Este equipo fue clave para mejorar nuestra presencia en línea. El nuevo diseño de nuestra página web ha aumentado la interacción con nuestros clientes de manera significativa.",
+      author: "Paulina Salas",
+      company: "TransporJal",
+      image: "/sinfondo.png"
     },
   ]
 
@@ -39,7 +44,7 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="py-20" style={{ backgroundColor: '#01030e' }}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-primary-light dark:text-primary-dark">What Clients Say</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-primary-light dark:text-primary-dark">Testimonios de nuestros clientes</h2>
         <div className="relative">
           <button onClick={prevSlide} className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark rounded-full p-2 z-10">
             <FaChevronLeft />
@@ -58,7 +63,6 @@ const Testimonials = () => {
       </div>
     </section>
   );
-  
 }
 
 const TestimonialCard = ({ quote, author, company, image }: { quote: string; author: string; company: string; image: string }) => (
@@ -83,4 +87,3 @@ const TestimonialCard = ({ quote, author, company, image }: { quote: string; aut
 )
 
 export default Testimonials
-

@@ -2,33 +2,33 @@
 
 import { FaClock, FaHandshake, FaLightbulb, FaRocket } from 'react-icons/fa';
 
-const WorkingBenefits = () => {
+const BeneficiosTrabajo = () => {
   return (
     <section id="working-benefits" className="py-20" style={{ backgroundColor: '#01030e' }}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-primary-light dark:text-primary-dark">
-          Benefits of Working With Us
+        <h2 className="text-4xl font-bold text-center mb-12 text-white">
+          Beneficios de trabajar con nosotros
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <BenefitCard
+          <BeneficioCard
             icon={<FaClock />}
-            title="Time-Efficient"
-            description="We deliver projects on time, ensuring you meet your deadlines."
+            title="Eficiencia en el Tiempo"
+            description="Entregamos los proyectos a tiempo, asegurando que cumplas con tus plazos."
           />
-          <BenefitCard
+          <BeneficioCard
             icon={<FaHandshake />}
-            title="Collaborative Approach"
-            description="We work closely with you to ensure your vision is realized."
+            title="Enfoque Colaborativo"
+            description="Trabajamos de cerca contigo para asegurar que tu visión se haga realidad."
           />
-          <BenefitCard
+          <BeneficioCard
             icon={<FaLightbulb />}
-            title="Innovative Solutions"
-            description="We bring creative and cutting-edge ideas to your projects."
+            title="Soluciones Innovadoras"
+            description="Aportamos ideas creativas y de vanguardia a tus proyectos."
           />
-          <BenefitCard
+          <BeneficioCard
             icon={<FaRocket />}
-            title="Scalable Results"
-            description="Our solutions are designed to grow with your business."
+            title="Resultados Escalables"
+            description="Nuestras soluciones están diseñadas para crecer junto a tu negocio."
           />
         </div>
       </div>
@@ -36,7 +36,7 @@ const WorkingBenefits = () => {
   );
 };
 
-const BenefitCard = ({
+const BeneficioCard = ({
   icon,
   title,
   description,
@@ -46,15 +46,18 @@ const BenefitCard = ({
   description: string;
 }) => (
   <div
-    className="rounded-lg shadow-md p-6 text-center"
+    className="rounded-lg shadow-lg p-6 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl"
     style={{
-      backgroundColor: '#34495e', // Gris azulado
+      background: 'linear-gradient(to right, #6a11cb, #2575fc)', // Degradado azul-morado
+      borderRadius: '10px',
     }}
   >
-    <div className="text-4xl mb-4 text-primary-light dark:text-primary-dark flex justify-center">{icon}</div>
-    <h3 className="text-xl font-semibold mb-2 text-primary-light dark:text-primary-dark">{title}</h3>
-    <p className="text-text-secondary-light dark:text-text-secondary-dark">{description}</p>
+    <div className="text-6xl mb-4 text-white flex justify-center transition duration-500 ease-in-out hover:text-yellow-400">
+      {icon}
+    </div>
+    <h3 className="text-2xl font-semibold mb-2 text-white">{title}</h3>
+    <p className="text-white text-sm">{description}</p>
   </div>
 );
 
-export default WorkingBenefits;
+export default BeneficiosTrabajo;

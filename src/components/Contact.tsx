@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { FaEnvelope, FaWhatsapp, FaFacebookMessenger } from "react-icons/fa";
 
-const Contact = () => {
+const Contacto = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,13 +33,13 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        setSuccessMessage("Message sent successfully!");
+        setSuccessMessage("¡Mensaje enviado con éxito!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        setErrorMessage("Failed to send message. Please try again.");
+        setErrorMessage("No se pudo enviar el mensaje. Intenta nuevamente.");
       }
     } catch (error) {
-      setErrorMessage("An error occurred. Please try again later.");
+      setErrorMessage("Ocurrió un error. Por favor, intenta nuevamente más tarde.");
     } finally {
       setIsSubmitting(false);
     }
@@ -48,7 +48,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20" style={{ backgroundColor: "#01030e" }}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-primary-light">Get in Touch</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-primary-light">Ponte en contacto</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <form
@@ -57,13 +57,13 @@ const Contact = () => {
             >
               <div className="mb-4">
                 <label className="block text-primary-light text-sm font-bold mb-2" htmlFor="name">
-                  Full Name
+                  Nombre Completo
                 </label>
                 <input
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-black bg-surface-light dark:bg-surface-dark leading-tight focus:outline-none focus:shadow-outline"
                   id="name"
                   type="text"
-                  placeholder="Your Name"
+                  placeholder="Tu nombre"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -71,13 +71,13 @@ const Contact = () => {
               </div>
               <div className="mb-4">
                 <label className="block text-primary-light text-sm font-bold mb-2" htmlFor="email">
-                  Email
+                  Correo Electrónico
                 </label>
                 <input
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-black bg-surface-light dark:bg-surface-dark leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
                   type="email"
-                  placeholder="your@email.com"
+                  placeholder="tu@email.com"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -85,12 +85,12 @@ const Contact = () => {
               </div>
               <div className="mb-6">
                 <label className="block text-primary-light text-sm font-bold mb-2" htmlFor="message">
-                  Message
+                  Mensaje
                 </label>
                 <textarea
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-black bg-surface-light dark:bg-surface-dark leading-tight focus:outline-none focus:shadow-outline"
                   id="message"
-                  placeholder="Your message here"
+                  placeholder="Tu mensaje aquí"
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
@@ -103,7 +103,7 @@ const Contact = () => {
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
                 </button>
               </div>
               {successMessage && <p className="text-green-500 mt-4">{successMessage}</p>}
@@ -112,7 +112,7 @@ const Contact = () => {
           </div>
           <div>
             <div className="bg-surface-light dark:bg-surface-dark shadow-md rounded px-8 pt-6 pb-8 mb-4">
-              <h3 className="text-2xl font-semibold mb-4 text-primary-light">Contact Information</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-primary-light">Información de contacto</h3>
               <div className="mb-4">
                 <p className="flex items-center text-primary-light">
                   <FaEnvelope className="mr-2 text-primary-light" />
@@ -138,17 +138,7 @@ const Contact = () => {
                 </p>
               </div>
               <div className="mb-4">
-                <p className="flex items-center text-primary-light">
-                  <FaFacebookMessenger className="mr-2 text-primary-light" />
-                  <a
-                    href="https://m.me/your.facebook.username"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-secondary-light transition duration-300"
-                  >
-                    Message on Facebook
-                  </a>
-                </p>
+               
               </div>
             </div>
           </div>
@@ -158,4 +148,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Contacto;
