@@ -19,6 +19,12 @@ const Portfolio = () => {
       link: "https://araresidencial.com/desarrollos/los-agaves-residencial",
     },
     {
+      image: "/ejemplo podologia.png",
+      title: "PodiatryPlus",
+      description: "Creación de un sitio web para servicios de podología",
+      link: "https://templateprincipal.vercel.app/",
+    },
+    {
       image: "/FundidosDesign.png",
       title: "Fundidos Design",
       description: "Creación de un sitio web interactivo para una agencia de fabricación de mobiliario,adaptable a dispositivos móviles.",
