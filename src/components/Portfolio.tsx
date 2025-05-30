@@ -31,10 +31,10 @@ const Portfolio = () => {
       link: "https://www.fundidosdesign.com/",
     },
     {
-      image: "/nowya.png",
-      title: "Nowya",
-      description: "Plataforma de reservaciones y gestión de reservaciones, adaptable a dispositivos móviles.",
-      link: "https://www.nowya.mx/es",
+      image: "/cueva del leon.pnh",
+      title: "Cueva del león Taquería",
+      description: "Pagina web informativa de una taquería, incluye menu, locación, etc... ",
+      link: "https://cuevadelleon.com/",
     },
     {
       image: "/Acquatix.png",
