@@ -1,33 +1,32 @@
+// app/api/contact/route.ts
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY); // Define esta variable en Vercel
 
 export async function POST(request: Request) {
   try {
     const { name, email, message } = await request.json();
 
-    // Configurar el transporte de nodemailer
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL, // Define en variables de entorno
-        pass: process.env.EMAIL_PASSWORD, // Define en variables de entorno
-      },
+    // Validación rápida
+    if (!name || !email || !message) {
+      return NextResponse.json({ error: 'Todos los campos son obligatorios.' }, { status: 400 });
+    }
+
+    // Enviar correo con Resend
+    const data = await resend.emails.send({
+      from: 'Contacto Jomsolution <onboarding@resend.dev>', // Puedes cambiar esto tras verificar tu dominio
+      to: 'jomsolutionsmx@gmail.com',
+      subject: `Mensaje nuevo de ${name}`,
+      text: `De: ${name}\nCorreo: ${email}\n\n${message}`,
     });
 
-    // Configurar el correo
-    const mailOptions = {
-      from: email,
-      to: 'jomsolutionsmx@gmail.com', // Correo de destino
-      subject: `Message from ${name}`,
-      text: message,
-    };
-
-    // Enviar el correo
-    await transporter.sendMail(mailOptions);
-
-    return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
-  } catch (error) {
-    console.error(error);
-    return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
+    return NextResponse.json({ message: 'Correo enviado exitosamente', data }, { status: 200 });
+  } catch (error: any) {
+    console.error('Error al enviar correo:', error);
+    return NextResponse.json(
+      { error: error.message || 'No se pudo enviar el mensaje' },
+      { status: 500 }
+    );
   }
 }
